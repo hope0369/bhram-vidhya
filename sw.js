@@ -41,7 +41,8 @@ function staleWhileRevalidate(e, request, cacheKey){
 // Network first, falling back to the cached copy; a fresh response replaces the cached one.
 function networkFirst(e, request, cacheKey){
   return fetch(request).then(res => {
-    if (cacheable(res)) e.waitUntil(caches.open(PAGE).then(c => store(c, cacheKey, res)).catch(() => {}));
+    if (cacheable(res)){ const copy = res.clone();   // cloned now, before the page reads the body
+      e.waitUntil(caches.open(PAGE).then(c => c.put(cacheKey, copy)).catch(() => {})); }
     return res;
   }).catch(() => caches.open(PAGE).then(c => c.match(cacheKey)).then(hit => hit || Response.error()));
 }
