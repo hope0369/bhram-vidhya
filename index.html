@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-kXC2b5uoAREg+uCPP45i4qUFAozWZqyhAErPjE71F5w='; style-src 'sha256-XCXKMf6hWThx4A4IpiEOszzz7IP5HIFAjN/6yJSIHvU='; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-5Un6JSP5wC/38udFGsF/E41/cfW/ENXX3TdZRIvBANE='; style-src 'sha256-XCXKMf6hWThx4A4IpiEOszzz7IP5HIFAjN/6yJSIHvU='; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#FFF8F0" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#170E0A" media="(prefers-color-scheme: dark)">
@@ -317,6 +317,10 @@ ul.sums{list-style:none;margin:0;padding:0;display:grid;gap:12px}
 <main class="shell" id="view" tabindex="-1"><noscript><p>This page needs JavaScript turned on to show the book.</p></noscript></main>
 
 
+<footer class="shell" lang="en">
+  <p>Inspired by HariPrabodham</p>
+</footer>
+
 <dialog class="sheet" id="settings" lang="en" aria-labelledby="set-title">
   <div class="sheet-in">
     <h3 id="set-title">Reading settings</h3>
@@ -339,7 +343,7 @@ ul.sums{list-style:none;margin:0;padding:0;display:grid;gap:12px}
 (function(){
 "use strict";
 const $ = id => document.getElementById(id);
-const BUILD = '4f0176e8ca16', NO_UPDATE = false;
+const BUILD = '051d045b85a2', NO_UPDATE = false;
 // Never run inside someone else's frame.
 if (window.top !== window.self){
   const box = document.createElement('div'); box.className = 'framed';
